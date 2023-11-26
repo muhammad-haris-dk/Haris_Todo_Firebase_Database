@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    body {
+      margin-top: 220px;
+      font-family: "Kdam Thmor Pro", sans-serif;
+      font-size: 35px;
+      background-image: url("https://cdn.wallpaperhub.app/cloudcache/7/4/f/3/d/5/74f3d51cbec9db78da32e103de1b28538af1b76a.jpg");
+      background-size: cover cover;
+      background-repeat: no-repeat;
+    }
+    .ul {
+      display: grid;
+      place-items: center;
+      margin-top: 30px;
+    }
+    .list {
+      border: 1px solid black;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      width: 450px;
+      padding: 15px;
+    }
+    .add {
+      border-radius: 60px;
+      border: none;
+      padding: 15px;
+      background-color: #000;
+      color: #fff;
+    }
+    .delAll {
+      border-radius: 50px;
+      border: none;
+      padding: 15px;
+      background-color: #000;
+      color: #fff;
+      margin-left: 5px;
+    }
+    .edit {
+      margin-left: 5px;
+      font-size: 25px;
+      border: none;
+      color: #fff;
+      padding: 12px;
+      border-radius: 60px;
+      background-color: black;
+      float: right;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .edit::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+    .edit:hover:before {
+      transform: translateX(0);
+      z-index: -1;
+    }
+    .edit:hover {
+      color: #000 !important;
+    }
+    .del {
+      font-size: 25px;
+      border: none;
+      color: #fff;
+      padding: 12px;
+      border-radius: 60px;
+      background-color: black;
+      float: right;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .del::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+    .del:hover:before {
+      transform: translateX(0);
+      z-index: -1;
+    }
+    .del:hover {
+      color: #000 !important;
+    }
+    .del {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .a{
+      font-size: 25px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+    .a:hover:before {
+      transform: translateX(0);
+      z-index: -1;
+    }
+    .a:hover {
+      color: #000 !important;
+    }
+    #inp {
+      /* border: none; */
+      border-radius: 60px;
+      border: 1px solid black;
+      padding: 15px;
+      background-color: #fff;
+      width: 190px;
+      font-size: 25px;
+      
+    }
+    .ok{
+      display: flex;
+      justify-content: center;
+      
+    }
+    .center{
+      display: grid;
+      place-items: center;
+    }
+  </style>
+  <body>
+    <div class="center">
+      <h1>-- To Do List --</h1>
+    </div>
+    <div class="ok">
+      <input id="inp" type="text" />
+      <button class="add a" onclick="addItem()">Add</button>
+      <button class="delAll a" onclick="deleteAllItem()">Delete All</button>
+    </div>
+    <div class="ul">
+      <ol id="list"></ol>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+<!-- asdfsd -->
